@@ -5,30 +5,40 @@
 			<meta charset="utf-8">
 			<link rel="stylesheet" type="text/css" href="style.css">
 
-			<link rel="preconnect" href="https://fonts.googleapis.com">
-			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-			<link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
+			<!-- Bootstrap CSS -->
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 			
 			<script src="script.js" defer></script>
 		</head>
 		
 		<body>
-			<div id="caixa">
-				<div>
-					<h1>Calcule IMC</h1>
+			<div id="caixa" class="container">
+				<div id="conteudo">
+					<div id="title">
+						<h1 id="hum">Calcule IMC</h1>
+					</div>
+					<div id="forms">
+						<form>
+							<span>Peso</span><input type="text" name="peso" id="peso" placeholder="digite seu peso em quilos"><br>
+							<span>Altura</span><input type="text" name="altura" id="altura" placeholder="digite sua altura em centímetros">
+						</form><hr>
+						
+						<div id="flexbox">
+							<div id="valor-box">
+								<input type="text" name="resultado" id="resultado" disabled="disabled">
+								<button id="botao" type="button" onclick="document.getElementById('resultado').value = calcularImc(peso, altura)">Ver resultado</button>
+							</div>							
+							
+							<div id="classif-box">
+								<input type="text" name="classificacao" id="classificacao" disabled="disabled">
+								<button id="botao" type="button" onclick="document.getElementById('classificacao').value = classificarImc(peso, altura)">Ver Classificação</button>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div>
-					<form>
-						<span>Peso</span><input type="text" name="peso" id="peso" placeholder="digite seu peso"><br>
-						<span>Altura</span><input type="text" name="altura" id="altura" placeholder="digite sua altura">
-					</form>
-					
-					<button id="botao" type="button" onclick="document.getElementById('resultado').value = calcularImc(peso, altura)">Ver resultado</button>
-					<span>Resultado</span><input type="text" name="resultado" id="resultado" disabled="disabled"><br>
-					
-					<button id="botao" type="button" onclick="document.getElementById('classificacao').value = classificarImc(peso, altura)">Ver resultado</button>
-					<span>Classificacao</span><input type="text" name="classificacao" id="classificacao" disabled="disabled">
-				</div>
+				<footer>
+					<p>Desenvolvido por Leonardo Weiss | <a href="https://github.com/leonardoweiss">Contate-me</a> </p>
+				</footer>	
 			</div>
 		</body>
 	</html>

@@ -6,9 +6,11 @@ function calcularImc (peso, altura){
 	peso = parseFloat(peso);
 	altura = parseFloat(altura);
 	
-	var resultado = peso / (altura * altura)
+	altura = altura / 100;
 	
-	return resultado
+	var resultado = peso / (altura * altura);
+	
+	return resultado;
 };
 
 function classificarImc (peso, altura){
@@ -18,6 +20,8 @@ function classificarImc (peso, altura){
 
 	peso = parseFloat(peso);
 	altura = parseFloat(altura);
+
+	altura = altura / 100;
 	
 	var resultado = peso / (altura * altura)
 	var classificacao = ''
